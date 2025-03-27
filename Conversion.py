@@ -18,6 +18,10 @@ def convert2(n):
 #testing python gui, this opens up a blank window titled Conversion
 root = tkinter.Tk(screenName=None, baseName=None, className='Conversion', useTk=1)
 #see if I can set the size of the defualt window
-label = Label(root, text='Tempature Conversion Rates')
-label.pack()    #this adds the label on the root gui
+title = Label(root, text='Tempature Conversion Rates')
+title.grid(row=0,column=1)    #this adds the label on the root gui
+
+heading1 = Label(root, text='Conversion 1').grid(row=1, column=0, pady=10)
+heading2 = Label(root, text='Conversion 2').grid(row=1, column=2, pady=10)
+
 root.mainloop() #this shows the gui until I exit out

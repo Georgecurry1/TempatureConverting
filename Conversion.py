@@ -1,4 +1,5 @@
 import tkinter
+import tkinter.ttk
 from tkinter import*
 #will try a GUI interface this time
 #this is psudo code
@@ -23,5 +24,15 @@ title.grid(row=0,column=1)    #this adds the label on the root gui
 
 heading1 = Label(root, text='Conversion 1').grid(row=1, column=0, pady=10)
 heading2 = Label(root, text='Conversion 2').grid(row=1, column=2, pady=10)
+
+combo1 = tkinter.ttk.Combobox(root, values=["Fahrenheit","Celsius"])
+combo2 = tkinter.ttk.Combobox(root, values=["Fahrenheit","Celsius"])
+
+#set default option in combo box:
+combo1.set("Fahrenheit")
+combo2.set("Celsius")
+
+combo1.grid(row=2, column=0, pady=10)
+combo2.grid(row=2, column=2, pady=10)
 
 root.mainloop() #this shows the gui until I exit out

@@ -35,4 +35,15 @@ combo2.set("Celsius")
 combo1.grid(row=2, column=0, pady=10)
 combo2.grid(row=2, column=2, pady=10)
 
+#adds text boxes for each option
+enterText1 = Entry(root)
+enterText1.grid(row=3, column=0, pady=5)
+
+enterText2 = Entry(root)
+enterText2.grid(row=3, column=2, pady=5)
+
+#adds submit button
+submitButton = Button(root, text= "Submit")
+submitButton.grid(row=4, column=1)
+
 root.mainloop() #this shows the gui until I exit out

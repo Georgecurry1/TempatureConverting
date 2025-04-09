@@ -46,4 +46,8 @@ enterText2.grid(row=3, column=2, pady=5)
 submitButton = Button(root, text= "Submit")
 submitButton.grid(row=4, column=1)
 
+#once the submit button is pressed, check to see if both dropdown options are different.
+#if they are then do the conversion. Then output it on the screen
+
+
 root.mainloop() #this shows the gui until I exit out

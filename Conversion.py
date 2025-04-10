@@ -1,8 +1,7 @@
 import tkinter
 import tkinter.ttk
 from tkinter import*
-#will try a GUI interface this time
-#this is psudo code
+#functions
 
 def convert1(n):
     #fahrenheit to celsius
@@ -15,6 +14,10 @@ def convert2(n):
     #n is the input
     print("do conversion rate")
     return #converted number return here
+
+def onSubmit(self):
+    print("Submitted")
+
 
 #testing python gui, this opens up a blank window titled Conversion
 root = tkinter.Tk(screenName=None, baseName=None, className='Conversion', useTk=1)
@@ -49,5 +52,6 @@ submitButton.grid(row=4, column=1)
 #once the submit button is pressed, check to see if both dropdown options are different.
 #if they are then do the conversion. Then output it on the screen
 
+submitButton.bind("<ButtonRelease-1>", onSubmit) #run the onSubmit function when left button is clicked on button
 
 root.mainloop() #this shows the gui until I exit out

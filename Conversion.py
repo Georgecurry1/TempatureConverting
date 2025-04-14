@@ -16,9 +16,11 @@ def convert2(n):
     return #converted number return here
 
 def onSubmit(self):
-    print("Submitted")
-
-
+    #check to see if the first dropdown is different from the 2nd. if so, this first dropdown menu will determine
+    #which conversion we do
+    #2nd check the fields and do conversion, output it on the GUI
+    print("placeholder")
+    
 #testing python gui, this opens up a blank window titled Conversion
 root = tkinter.Tk(screenName=None, baseName=None, className='Conversion', useTk=1)
 #see if I can set the size of the defualt window

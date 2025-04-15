@@ -1,6 +1,7 @@
-import tkinter
-import tkinter.ttk
 from tkinter import*
+import tkinter
+import tkinter.messagebox
+import tkinter.ttk
 #functions
 
 def convert1(n):
@@ -19,7 +20,9 @@ def onSubmit(self):
     #check to see if the first dropdown is different from the 2nd. if so, this first dropdown menu will determine
     #which conversion we do
     #2nd check the fields and do conversion, output it on the GUI
-    print("placeholder")
+    num= 65 #test
+    answer = 'The conversion between 1 and 2 = '+str(num)
+    message_box = tkinter.messagebox.showinfo(title="Answer", message=answer)
     
 #testing python gui, this opens up a blank window titled Conversion
 root = tkinter.Tk(screenName=None, baseName=None, className='Conversion', useTk=1)
@@ -54,6 +57,6 @@ submitButton.grid(row=4, column=1)
 #once the submit button is pressed, check to see if both dropdown options are different.
 #if they are then do the conversion. Then output it on the screen
 
-submitButton.bind("<ButtonRelease-1>", onSubmit) #run the onSubmit function when left button is clicked on button
+submitButton.bind("<Button-1>", onSubmit) #run the onSubmit function when left button is clicked on button
 
 root.mainloop() #this shows the gui until I exit out

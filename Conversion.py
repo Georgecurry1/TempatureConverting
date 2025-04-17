@@ -4,29 +4,33 @@ import tkinter.messagebox
 import tkinter.ttk
 #functions
 
-def convert1(n):
+def toFahrenheit(n):
     #fahrenheit to celsius
     #n is the input
-    print("do conversion rate")
-    return #converted number return here
+    result = (n-32)* 5/9
+    return result
 
-def convert2(n):
+def toCelsius(n):
     #celsius to fahrenheit
-    #n is the input
-    print("do conversion rate")
-    return #converted number return here
+    result = (n * 9/5) + 32
+    return result
 
 def onSubmit(self):
-    #check to see if the first dropdown is different from the 2nd. if so, this first dropdown menu will determine
-    #which conversion we do
-    #2nd check the fields and do conversion, output it on the GUI
-    num= 65 #test
-    answer = 'The conversion between 1 and 2 = '+str(num)
-    message_box = tkinter.messagebox.showinfo(title="Answer", message=answer)
-    
-#testing python gui, this opens up a blank window titled Conversion
+    #checks to see if both options are different, if so, it does the conversion based on  combobox 1
+    if combo2.get() != combo1.get():
+        #if both boxes are different then proceed
+        if combo1.get()=="Fahrenheit":
+            num = toFahrenheit(int(enterText1.get()))#convert the number we get from the field to F
+            answer = 'The conversion between Fahrenheit and Celsius = '+str(round(num,1))
+            tkinter.messagebox.showinfo(title="Answer", message=answer)
+            root.destroy()
+        else:
+            num = toCelsius(int(enterText1.get()))
+            answer = 'The conversion between Celsius and Fahrenheit = '+str(round(num,1))
+            tkinter.messagebox.showinfo(title="Answer", message=answer) #display a popup GUI with answer!
+            root.destroy()
+
 root = tkinter.Tk(screenName=None, baseName=None, className='Conversion', useTk=1)
-#see if I can set the size of the defualt window
 title = Label(root, text='Tempature Conversion Rates')
 title.grid(row=0,column=1)    #this adds the label on the root gui
 
@@ -45,18 +49,16 @@ combo2.grid(row=2, column=2, pady=10)
 
 #adds text boxes for each option
 enterText1 = Entry(root)
-enterText1.grid(row=3, column=0, pady=5)
+enterText1.grid(row=3, column=1, pady=5)
 
-enterText2 = Entry(root)
-enterText2.grid(row=3, column=2, pady=5)
 
 #adds submit button
 submitButton = Button(root, text= "Submit")
-submitButton.grid(row=4, column=1)
+submitButton.grid(row=4, column=1, pady=15)
 
 #once the submit button is pressed, check to see if both dropdown options are different.
 #if they are then do the conversion. Then output it on the screen
 
 submitButton.bind("<Button-1>", onSubmit) #run the onSubmit function when left button is clicked on button
 
-root.mainloop() #this shows the gui until I exit out
+root.mainloop() #this shows the gui until user exits out
